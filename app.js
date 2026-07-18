@@ -5,7 +5,7 @@
  */
 
 // --- DATABASE & STATE MANAGEMENT ---
-const DB_VERSION = "1.0.1";
+const DB_VERSION = "1.0.2";
 
 const DEFAULT_CATEGORIES = [
   { id: "all", name: "All Products" },
@@ -30,10 +30,9 @@ const DEFAULT_PRODUCTS = [
     originalPriceUSD: 24,
     rating: 4.8,
     stock: 12,
-    image: "https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=600&auto=format&fit=crop&q=80",
+    image: "banner_handi.jpg",
     images: [
-      "https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?w=600&auto=format&fit=crop&q=80"
+      "banner_handi.jpg"
     ],
     tag: "Sale",
     featured: true,
@@ -53,10 +52,9 @@ const DEFAULT_PRODUCTS = [
     originalPriceUSD: 28,
     rating: 4.7,
     stock: 8,
-    image: "https://images.unsplash.com/photo-1610701596007-11502861dcfa?w=600&auto=format&fit=crop&q=80",
+    image: "banner_plates.jpg",
     images: [
-      "https://images.unsplash.com/photo-1610701596007-11502861dcfa?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1576016770956-debb63d90029?w=600&auto=format&fit=crop&q=80"
+      "banner_plates.jpg"
     ],
     tag: "Popular",
     featured: true,
@@ -98,10 +96,9 @@ const DEFAULT_PRODUCTS = [
     originalPriceUSD: 12,
     rating: 4.9,
     stock: 15,
-    image: "https://images.unsplash.com/photo-1595166034177-3e1b78b5e28a?w=600&auto=format&fit=crop&q=80",
+    image: "banner_cups.jpg",
     images: [
-      "https://images.unsplash.com/photo-1595166034177-3e1b78b5e28a?w=600&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1612196808214-b8e1d6145a8c?w=600&auto=format&fit=crop&q=80"
+      "banner_cups.jpg"
     ],
     tag: "Best Seller",
     featured: true,
@@ -121,9 +118,9 @@ const DEFAULT_PRODUCTS = [
     originalPriceUSD: 17,
     rating: 4.9,
     stock: 20,
-    image: "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=600&auto=format&fit=crop&q=80",
+    image: "banner_cups.jpg",
     images: [
-      "https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?w=600&auto=format&fit=crop&q=80"
+      "banner_cups.jpg"
     ],
     tag: "Sale",
     featured: true,
@@ -231,9 +228,9 @@ const DEFAULT_PRODUCTS = [
     originalPriceUSD: 39,
     rating: 4.9,
     stock: 2,
-    image: "https://images.unsplash.com/photo-1595166034177-3e1b78b5e28a?w=600&auto=format&fit=crop&q=80",
+    image: "banner_cups.jpg",
     images: [
-      "https://images.unsplash.com/photo-1595166034177-3e1b78b5e28a?w=600&auto=format&fit=crop&q=80"
+      "banner_cups.jpg"
     ],
     tag: "Low Stock",
     featured: true,
@@ -491,6 +488,16 @@ function router() {
 
   // Close hamburger filters or sidebar overlay if mobile
   document.getElementById("app-sidebar").classList.remove("mobile-visible");
+
+  // Show sidebar ONLY on products catalog page, hide everywhere else (Home, Cart, Profile, etc.)
+  const sidebar = document.getElementById("app-sidebar");
+  if (sidebar) {
+    if (hash === "#/products") {
+      sidebar.style.display = "block";
+    } else {
+      sidebar.style.display = "none";
+    }
+  }
 
   // Track page views in analytics
   trackPageView(hash);
@@ -929,27 +936,7 @@ function renderHome() {
       </div>
     </div>
 
-    <!-- Featured Products section -->
-    <section class="scroll-reveal">
-      <div class="section-header">
-        <div>
-          <h2 class="section-title">Best Sellers</h2>
-          <p style="font-size:13px; color:rgba(92,58,33,0.6); margin-top:5px;">Handmade with organic clay, perfect for your kitchen & dining</p>
-        </div>
-        <a href="#/products" class="view-all-link">
-          <span>View All Products</span>
-          <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/></svg>
-        </a>
-      </div>
-
-      <div class="products-grid">
-        ${featured.map(p => renderProductCard(p)).join("")}
-      </div>
-    </section>
-
-    ${getTraditionalDivider()}
-
-    <!-- Our Story Section -->
+    <!-- Our Story (Brand Vision) Section - SHOWN FIRST -->
     <section class="our-story-section scroll-reveal">
       <div class="story-text">
         <span style="font-weight:700; color:var(--primary-color); text-transform:uppercase; font-size:12px; letter-spacing:1px;">Heritage & Legacy</span>
@@ -968,6 +955,30 @@ function renderHome() {
         </svg>
       </div>
     </section>
+
+    ${getTraditionalDivider()}
+
+    <!-- Collapsible Featured Products Dropdown -->
+    <details class="scroll-reveal" style="background-color: var(--bg-card); border-radius: var(--border-radius-lg); border: 2px dashed var(--border-color); padding: 25px; margin-bottom: 50px; cursor: pointer;">
+      <summary style="font-family: 'Playfair Display', serif; font-size: 22px; font-weight: bold; color: var(--text-dark); display: flex; align-items: center; justify-content: space-between; outline: none; list-style: none;">
+        <div style="display: flex; align-items: center; gap: 15px;">
+          <svg viewBox="0 0 24 24" style="width: 24px; height: 24px; fill: var(--primary-color);">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+          </svg>
+          <span>✨ Explore Featured Clayware Best Sellers (Click to Reveal)</span>
+        </div>
+        <span style="font-size: 14px; color: var(--primary-color); font-weight: bold;">▼ Tap to Expand</span>
+      </summary>
+      
+      <div style="margin-top: 30px; cursor: default;" onclick="event.stopPropagation();">
+        <div class="products-grid">
+          ${featured.map(p => renderProductCard(p)).join("")}
+        </div>
+        <div style="text-align: center; margin-top: 20px;">
+          <a href="#/products" class="btn-primary">View Full Catalogue</a>
+        </div>
+      </div>
+    </details>
 
     ${getTraditionalDivider()}
 
@@ -3088,3 +3099,34 @@ if ("serviceWorker" in navigator) {
       });
   });
 }
+
+// --- CUSTOM PWA INSTALL PROMPT TRIGGER ---
+let deferredPrompt;
+window.addEventListener("beforeinstallprompt", (e) => {
+  // Prevent Chrome default install prompt banner from popping up automatically
+  e.preventDefault();
+  // Save the event so we can trigger it with our custom button later
+  deferredPrompt = e;
+  // Show our custom navbar button
+  const installBtn = document.getElementById("pwa-install-btn");
+  if (installBtn) {
+    installBtn.style.display = "flex";
+  }
+});
+
+window.addEventListener("DOMContentLoaded", () => {
+  const installBtn = document.getElementById("pwa-install-btn");
+  if (installBtn) {
+    installBtn.addEventListener("click", async () => {
+      if (!deferredPrompt) return;
+      // Show the install dialog
+      deferredPrompt.prompt();
+      // Wait for the user to confirm installation
+      const { outcome } = await deferredPrompt.userChoice;
+      console.log(`[PWA] User choice outcome: ${outcome}`);
+      deferredPrompt = null;
+      // Hide our button
+      installBtn.style.display = "none";
+    });
+  }
+});

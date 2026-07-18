@@ -689,18 +689,26 @@ h1, h2, h3, h4, h5, h6, .pottery-heading {
 
 .btn-card-cart {
   background-color: var(--primary-color);
-  color: var(--bg-warm);
-  border: none;
+  color: #FFFFFF !important;
+  border: 1.5px solid #FFFFFF; /* White slip painting border */
   padding: 10px;
-  border-radius: var(--border-radius-sm);
+  border-radius: 14px 6px 16px 6px / 6px 16px 6px 14px;
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
+  box-shadow: 0 4px 8px rgba(92, 58, 33, 0.12);
   transition: var(--transition-smooth);
+  /* Repeating white wheat pattern on the button */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath d='M6 1 L8 3 L6 2 L4 3 Z M6 4 L8 6 L6 5 L4 6 Z' fill='rgba%28255, 255, 255, 0.22%29'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-position: top 1px center;
+  position: relative;
 }
 
 .btn-card-cart:hover {
   background-color: var(--primary-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 12px rgba(92, 58, 33, 0.18);
 }
 
 /* Our Story Section */
@@ -2192,22 +2200,22 @@ h1, h2, h3, h4, h5, h6, .pottery-heading {
 /* --- LOCAL PAKISTANI TRUCK ART & URDU TYPOGRAPHY DETAILS --- */
 .urdu-accent {
   font-family: 'Noto Nastaliq Urdu', serif;
-  font-size: 14px;
+  font-size: 11px;
   color: var(--primary-color);
   font-weight: 700;
   margin-right: 8px;
   display: inline-block;
   vertical-align: middle;
-  line-height: 1.8;
+  line-height: 1.5;
   direction: rtl;
 }
 
 .urdu-logo-sub {
   font-family: 'Noto Nastaliq Urdu', serif;
-  font-size: 11px;
+  font-size: 8.5px;
   color: var(--primary-hover);
   display: block;
-  margin-top: -2px;
+  margin-top: -6px;
   opacity: 0.8;
   letter-spacing: 0px;
 }
