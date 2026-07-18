@@ -897,7 +897,7 @@ function renderHome() {
     <div class="hero-slider">
       <div class="hero-slide active" id="slide-0">
         <div class="hero-text">
-          <span class="hero-tagline">Seasoned Earthenware</span>
+          <span class="hero-tagline"><span class="urdu-accent" style="font-size: 8px;">ہاتھ کا ہنر —</span> Seasoned Earthenware</span>
           <h2 class="hero-title">Experience Organic Cooking</h2>
           <p class="hero-desc">Clay pots release natural minerals into your meals, balancing acidity and locks in moisture for premium flavor.</p>
           <a href="#/products" class="btn-primary">Browse Cookware</a>
@@ -908,7 +908,7 @@ function renderHome() {
       </div>
       <div class="hero-slide" id="slide-1">
         <div class="hero-text">
-          <span class="hero-tagline">100% Handcrafted</span>
+          <span class="hero-tagline"><span class="urdu-accent" style="font-size: 8px;">مٹی کی خوشبو —</span> 100% Handcrafted</span>
           <h2 class="hero-title">Traditional Heritage Art</h2>
           <p class="hero-desc">Molded by generations of master potters, kiln-fired in rural villages, and finished with delicate hand-painted motifs.</p>
           <a href="#/products" class="btn-primary">Discover Decor</a>
@@ -919,7 +919,7 @@ function renderHome() {
       </div>
       <div class="hero-slide" id="slide-2">
         <div class="hero-text">
-          <span class="hero-tagline">Naturally Minerals</span>
+          <span class="hero-tagline"><span class="urdu-accent" style="font-size: 8px;">خالص صحت —</span> Naturally Minerals</span>
           <h2 class="hero-title">Earthen Water Dispensers</h2>
           <p class="hero-desc">Naturally cool and alkaline drinking water, loaded with minerals. The natural refrigeration for warm summer days.</p>
           <a href="#/products" class="btn-primary">Shop Water Pitchers</a>
@@ -936,7 +936,47 @@ function renderHome() {
       </div>
     </div>
 
-    <!-- Shop By Category Row - SHOWN FIRST -->
+    <!-- Our Story (Brand Vision) Section - SHOWN FIRST -->
+    <section class="our-story-section scroll-reveal">
+      <div class="story-text">
+        <span style="font-weight:700; color:var(--primary-color); text-transform:uppercase; font-size:12px; letter-spacing:1px;">Heritage & Legacy</span>
+        <h3 style="margin-top:10px;">The Soul of Terracotta</h3>
+        <p>At Mitti Ky Bartan, we are preserving the 5,000-year-old art of clay pottery. Each vessel is handmade on the potter's wheel using mud sourced from clean river basins, dry-sunned, and fired in traditional brick kilns.</p>
+        <p>Unlike modern non-stick and aluminum cookware which leach toxic metals on heat, clayware is inert, porous, and neutralizes the acid level in food. It enhances food's natural flavors through gentle heat-circulation, restoring nutritional values.</p>
+        <a href="#/faq" class="btn-primary" style="margin-top:10px;">Learn Clay Cookware Care</a>
+      </div>
+      <div class="story-image-container">
+        <!-- SVG pottery spinner design for art feeling -->
+        <svg viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="45" fill="none" stroke="var(--primary-color)" stroke-width="0.8" stroke-dasharray="2 2" />
+          <path d="M50 20 C 35 20, 25 35, 25 50 C 25 65, 35 80, 50 80 C 65 80, 75 65, 75 50 C 75 35, 65 20, 50 20 Z" fill="none" stroke="var(--primary-color)" stroke-width="1.5" />
+          <path d="M50 30 C 40 30, 35 40, 35 50 C 35 60, 40 70, 50 70 C 60 70, 65 60, 65 50 C 65 40, 60 30, 50 30 Z" fill="var(--secondary-color)" opacity="0.6" stroke="var(--primary-color)" stroke-width="1" />
+          <path d="M50 40 A 10 10 0 1 0 50 60 A 10 10 0 1 0 50 40 Z" fill="var(--primary-color)" />
+        </svg>
+      </div>
+    </section>
+
+    ${getTraditionalDivider()}
+
+    <!-- Testimonial Section -->
+    <section class="testimonials-section scroll-reveal">
+      <h2 class="section-title" style="text-align:center; margin:0 auto 40px auto;">Earthen Hearts</h2>
+      <div class="testimonials-grid">
+        ${testimonials.map(t => `
+          <div class="testimonial-card">
+            <p class="testimonial-quote">"${t.text}"</p>
+            <div class="testimonial-author">
+              <div class="author-initials">${t.initials}</div>
+              <div class="author-name">${t.author}</div>
+            </div>
+          </div>
+        `).join("")}
+      </div>
+    </section>
+
+    ${getTraditionalDivider()}
+
+    <!-- Shop By Category Row - SHOWN LAST -->
     <div class="home-categories-row scroll-reveal">
       <h2 class="section-title" style="text-align: center; margin: 40px auto 10px auto;">Shop By Category</h2>
       <p style="text-align: center; font-size: 13px; color: rgba(92,58,33,0.6); margin-bottom: 30px;">Choose a collection to browse our heritage clay shapes</p>
@@ -967,29 +1007,7 @@ function renderHome() {
 
     ${getTraditionalDivider()}
 
-    <!-- Our Story (Brand Vision) Section - SHOWN FIRST -->
-    <section class="our-story-section scroll-reveal">
-      <div class="story-text">
-        <span style="font-weight:700; color:var(--primary-color); text-transform:uppercase; font-size:12px; letter-spacing:1px;">Heritage & Legacy</span>
-        <h3 style="margin-top:10px;">The Soul of Terracotta</h3>
-        <p>At Mitti Ky Bartan, we are preserving the 5,000-year-old art of clay pottery. Each vessel is handmade on the potter's wheel using mud sourced from clean river basins, dry-sunned, and fired in traditional brick kilns.</p>
-        <p>Unlike modern non-stick and aluminum cookware which leach toxic metals on heat, clayware is inert, porous, and neutralizes the acid level in food. It enhances food's natural flavors through gentle heat-circulation, restoring nutritional values.</p>
-        <a href="#/faq" class="btn-primary" style="margin-top:10px;">Learn Clay Cookware Care</a>
-      </div>
-      <div class="story-image-container">
-        <!-- SVG pottery spinner design for art feeling -->
-        <svg viewBox="0 0 100 100">
-          <circle cx="50" cy="50" r="45" fill="none" stroke="var(--primary-color)" stroke-width="0.8" stroke-dasharray="2 2" />
-          <path d="M50 20 C 35 20, 25 35, 25 50 C 25 65, 35 80, 50 80 C 65 80, 75 65, 75 50 C 75 35, 65 20, 50 20 Z" fill="none" stroke="var(--primary-color)" stroke-width="1.5" />
-          <path d="M50 30 C 40 30, 35 40, 35 50 C 35 60, 40 70, 50 70 C 60 70, 65 60, 65 50 C 65 40, 60 30, 50 30 Z" fill="var(--secondary-color)" opacity="0.6" stroke="var(--primary-color)" stroke-width="1" />
-          <path d="M50 40 A 10 10 0 1 0 50 60 A 10 10 0 1 0 50 40 Z" fill="var(--primary-color)" />
-        </svg>
-      </div>
-    </section>
-
-    ${getTraditionalDivider()}
-
-    <!-- Collapsible Featured Products Dropdown -->
+    <!-- Collapsible Featured Products Dropdown - SHOWN LAST -->
     <details class="scroll-reveal" style="background-color: var(--bg-card); border-radius: var(--border-radius-lg); border: 2px dashed var(--border-color); padding: 25px; margin-bottom: 50px; cursor: pointer;">
       <summary style="font-family: 'Playfair Display', serif; font-size: 22px; font-weight: bold; color: var(--text-dark); display: flex; align-items: center; justify-content: space-between; outline: none; list-style: none;">
         <div style="display: flex; align-items: center; gap: 15px;">
@@ -1010,24 +1028,6 @@ function renderHome() {
         </div>
       </div>
     </details>
-
-    ${getTraditionalDivider()}
-
-    <!-- Testimonial Section -->
-    <section class="testimonials-section scroll-reveal">
-      <h2 class="section-title" style="text-align:center; margin:0 auto 40px auto;">Earthen Hearts</h2>
-      <div class="testimonials-grid">
-        ${testimonials.map(t => `
-          <div class="testimonial-card">
-            <p class="testimonial-quote">"${t.text}"</p>
-            <div class="testimonial-author">
-              <div class="author-initials">${t.initials}</div>
-              <div class="author-name">${t.author}</div>
-            </div>
-          </div>
-        `).join("")}
-      </div>
-    </section>
   `;
 
   document.getElementById("app-view").innerHTML = viewHtml;
