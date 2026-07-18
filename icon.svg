@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- Warm white circle background -->
+  <circle cx="256" cy="256" r="240" fill="#FFFDF9" stroke="#F5EAD9" stroke-width="8"/>
+  <!-- Decorative hand painted wave dots -->
+  <circle cx="256" cy="256" r="210" fill="none" stroke="#F5EAD9" stroke-width="3" stroke-dasharray="10 15"/>
+  
+  <!-- Terracotta Clay Pot -->
+  <g fill="#C1592C" stroke="#5C3A21" stroke-width="12" stroke-linejoin="round" stroke-linecap="round">
+    <!-- Lid/Top neck -->
+    <path d="M 180 140 L 332 140 M 200 140 C 200 110, 312 110, 312 140" fill="#8B3A1F"/>
+    
+    <!-- Body of Pot -->
+    <path d="M 200 140 
+             C 140 220, 130 380, 256 400 
+             C 382 380, 372 220, 312 140 Z"/>
+             
+    <!-- Inner design line -->
+    <path d="M 160 250 Q 256 280, 352 250" fill="none" stroke="#F5EAD9" stroke-width="8"/>
+    <path d="M 152 290 Q 256 320, 360 290" fill="none" stroke="#F5EAD9" stroke-width="6" stroke-dasharray="6 8"/>
+  </g>
+</svg>
