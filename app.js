@@ -897,7 +897,7 @@ function renderHome() {
     <div class="hero-slider">
       <div class="hero-slide active" id="slide-0">
         <div class="hero-text">
-          <span class="hero-tagline"><span class="urdu-accent">ہاتھ کا ہنر —</span> Seasoned Earthenware</span>
+          <span class="hero-tagline">Seasoned Earthenware</span>
           <h2 class="hero-title">Experience Organic Cooking</h2>
           <p class="hero-desc">Clay pots release natural minerals into your meals, balancing acidity and locks in moisture for premium flavor.</p>
           <a href="#/products" class="btn-primary">Browse Cookware</a>
@@ -908,7 +908,7 @@ function renderHome() {
       </div>
       <div class="hero-slide" id="slide-1">
         <div class="hero-text">
-          <span class="hero-tagline"><span class="urdu-accent">مٹی کی خوشبو —</span> 100% Handcrafted</span>
+          <span class="hero-tagline">100% Handcrafted</span>
           <h2 class="hero-title">Traditional Heritage Art</h2>
           <p class="hero-desc">Molded by generations of master potters, kiln-fired in rural villages, and finished with delicate hand-painted motifs.</p>
           <a href="#/products" class="btn-primary">Discover Decor</a>
@@ -919,7 +919,7 @@ function renderHome() {
       </div>
       <div class="hero-slide" id="slide-2">
         <div class="hero-text">
-          <span class="hero-tagline"><span class="urdu-accent">خالص صحت —</span> Naturally Minerals</span>
+          <span class="hero-tagline">Naturally Minerals</span>
           <h2 class="hero-title">Earthen Water Dispensers</h2>
           <p class="hero-desc">Naturally cool and alkaline drinking water, loaded with minerals. The natural refrigeration for warm summer days.</p>
           <a href="#/products" class="btn-primary">Shop Water Pitchers</a>
@@ -935,6 +935,37 @@ function renderHome() {
         <span class="slider-dot" onclick="setSlide(2)"></span>
       </div>
     </div>
+
+    <!-- Shop By Category Row - SHOWN FIRST -->
+    <div class="home-categories-row scroll-reveal">
+      <h2 class="section-title" style="text-align: center; margin: 40px auto 10px auto;">Shop By Category</h2>
+      <p style="text-align: center; font-size: 13px; color: rgba(92,58,33,0.6); margin-bottom: 30px;">Choose a collection to browse our heritage clay shapes</p>
+      
+      <div class="categories-flex">
+        <div class="category-circle-card" onclick="selectCategoryAndNavigate('plates')">
+          <div class="circle-icon">🍽️</div>
+          <span>Plates & Platters</span>
+        </div>
+        <div class="category-circle-card" onclick="selectCategoryAndNavigate('bowls')">
+          <div class="circle-icon">🥣</div>
+          <span>Bowls</span>
+        </div>
+        <div class="category-circle-card" onclick="selectCategoryAndNavigate('handi')">
+          <div class="circle-icon">🏺</div>
+          <span>Cooking Pots</span>
+        </div>
+        <div class="category-circle-card" onclick="selectCategoryAndNavigate('jugs')">
+          <div class="circle-icon">🥛</div>
+          <span>Jugs & Pitchers</span>
+        </div>
+        <div class="category-circle-card" onclick="selectCategoryAndNavigate('serving')">
+          <div class="circle-icon">🥘</div>
+          <span>Serving Ware</span>
+        </div>
+      </div>
+    </div>
+
+    ${getTraditionalDivider()}
 
     <!-- Our Story (Brand Vision) Section - SHOWN FIRST -->
     <section class="our-story-section scroll-reveal">
