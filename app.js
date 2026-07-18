@@ -890,7 +890,7 @@ function renderHome() {
     <div class="hero-slider">
       <div class="hero-slide active" id="slide-0">
         <div class="hero-text">
-          <span class="hero-tagline">Seasoned Earthenware</span>
+          <span class="hero-tagline"><span class="urdu-accent">ہاتھ کا ہنر —</span> Seasoned Earthenware</span>
           <h2 class="hero-title">Experience Organic Cooking</h2>
           <p class="hero-desc">Clay pots release natural minerals into your meals, balancing acidity and locks in moisture for premium flavor.</p>
           <a href="#/products" class="btn-primary">Browse Cookware</a>
@@ -901,7 +901,7 @@ function renderHome() {
       </div>
       <div class="hero-slide" id="slide-1">
         <div class="hero-text">
-          <span class="hero-tagline">100% Handcrafted</span>
+          <span class="hero-tagline"><span class="urdu-accent">مٹی کی خوشبو —</span> 100% Handcrafted</span>
           <h2 class="hero-title">Traditional Heritage Art</h2>
           <p class="hero-desc">Molded by generations of master potters, kiln-fired in rural villages, and finished with delicate hand-painted motifs.</p>
           <a href="#/products" class="btn-primary">Discover Decor</a>
@@ -912,7 +912,7 @@ function renderHome() {
       </div>
       <div class="hero-slide" id="slide-2">
         <div class="hero-text">
-          <span class="hero-tagline">Naturally Minerals</span>
+          <span class="hero-tagline"><span class="urdu-accent">خالص صحت —</span> Naturally Minerals</span>
           <h2 class="hero-title">Earthen Water Dispensers</h2>
           <p class="hero-desc">Naturally cool and alkaline drinking water, loaded with minerals. The natural refrigeration for warm summer days.</p>
           <a href="#/products" class="btn-primary">Shop Water Pitchers</a>

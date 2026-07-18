@@ -1,11 +1,15 @@
-const CACHE_NAME = "mkb-pottery-cache-v1";
+const CACHE_NAME = "mkb-pottery-cache-v2";
 const ASSETS = [
   "./",
   "./index.html",
   "./styles.css",
   "./app.js",
   "./icon.svg",
-  "./manifest.json"
+  "./app_icon.jpg",
+  "./manifest.json",
+  "./banner_handi.jpg",
+  "./banner_plates.jpg",
+  "./banner_cups.jpg"
 ];
 
 // Install Event - cache core app assets
